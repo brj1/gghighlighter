@@ -1,8 +1,8 @@
-#My fork of YuLab-SMU/ggmsa
+# My fork of YuLab-SMU/ggmsa
 
 Multiple sequence alignment (MSA) plots in ggplot2. ggmsa adds functions to fortify ape::DNAbin and ape::AAbin  objects as well as matrices of aligments.
 
-##Installation
+## Installation
 
 To install run the following commands in R
 
@@ -18,7 +18,7 @@ BiocManager::install("treeio")
 devtools::install_github("brj1/ggmsa")
 ```
 
-##Examples
+## Examples
 
 You can simply call the `ggmsa` function to plot a MSA.
 
