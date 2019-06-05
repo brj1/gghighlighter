@@ -30,7 +30,10 @@ ggmsa(f)
 ```
 
 Amino acid values can be added with a geom_text layer.
+
 ```r
 library(ggplot2)
-ggmsa(f) + geom_text(aes(x=x, y=y, label=label)
+ggmsa(f) + geom_text()
 ```
+
+Beware that there are a lot of warnings thrown in the current version of ggmsa.
