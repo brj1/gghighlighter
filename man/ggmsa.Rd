@@ -4,16 +4,14 @@
 \alias{ggmsa}
 \title{ggmsa}
 \usage{
-ggmsa(fasta, start = NULL, end = NULL, font = "helvetica_regular")
+ggmsa(fasta, consensus = NA, fill.scale = ggplot2::scale_fill_discrete)
 }
 \arguments{
 \item{fasta}{aligned fasta file}
 
-\item{start}{start position to plot}
+\item{consensus}{either the name of the consensus sequence or the a character string of the consensus sequence or NA for no ceonsenus highlighting}
 
-\item{end}{end position to plot}
-
-\item{font}{character font}
+\item{fill.scale}{fill scale}
 }
 \value{
 ggplot object
@@ -22,5 +20,5 @@ ggplot object
 plot multiple sequence alignment using ggplot2
 }
 \author{
-guangchuang yu
+guangchuang yu, Bradley R Jones
 }
