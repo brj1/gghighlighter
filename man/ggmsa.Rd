@@ -4,14 +4,18 @@
 \alias{ggmsa}
 \title{ggmsa}
 \usage{
-ggmsa(fasta, consensus = NA, fill.scale = ggplot2::scale_fill_discrete)
+ggmsa(fasta, fill.scale = ggplot2::scale_fill_discrete, ...)
 }
 \arguments{
 \item{fasta}{aligned fasta file}
 
+\item{fill.scale}{fill scale}
+
+\item{...}{additional parameters passed to ggplot}
+
 \item{consensus}{either the name of the consensus sequence or the a character string of the consensus sequence or NA for no ceonsenus highlighting}
 
-\item{fill.scale}{fill scale}
+\item{remove.blank}{set TRUE to mark unknown, missing and gaps as NA (default: TRUE)}
 }
 \value{
 ggplot object

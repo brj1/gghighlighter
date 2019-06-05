@@ -11,7 +11,7 @@ geom_msa(mapping = NULL, data = NULL, ...)
 
 \item{data}{data}
 
-\item{...}{additional parameter passed to geom_tile}
+\item{...}{additional parameters passed to geom_tile}
 }
 \value{
 msa layer

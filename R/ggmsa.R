@@ -3,8 +3,10 @@
 ##'
 ##' @title ggmsa
 ##' @param fasta aligned fasta file
-##' @param consensus either the name of the consensus sequence or the a character string of the consensus sequence or NA for no ceonsenus highlighting
 ##' @param fill.scale fill scale
+##' @param consensus either the name of the consensus sequence or the a character string of the consensus sequence or NA for no ceonsenus highlighting
+##' @param remove.blank set TRUE to mark unknown, missing and gaps as NA (default: TRUE)
+##' @param ... additional parameters passed to ggplot
 ##' @return ggplot object
 ##' @importFrom treeio read.fasta
 ##' @importFrom ggplot2 ggplot
@@ -17,12 +19,12 @@
 ##' @author guangchuang yu, Bradley R Jones
 ggmsa <- function(
 	fasta,
-	consensus=NA,
-	fill.scale=ggplot2::scale_fill_discrete
+	fill.scale = ggplot2::scale_fill_discrete,
+	...
 ) {
     aln <- read.fasta(fasta)
     
-	ggplot(aln) +
+	ggplot(aln, ...) +
 		geom_msa() +
 		fill.scale(na.value=NA) +
 		theme_minimal() +
