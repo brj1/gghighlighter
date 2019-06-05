@@ -11,7 +11,7 @@ To install run the following commands in R
 install.packages(c("devtools", "BiocManager"))
 
 #install treeio package
-libray(BiocManager)
+library(BiocManager)
 BiocManager::install("treeio")
 
 #install ggmmsa from github
