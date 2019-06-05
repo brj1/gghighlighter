@@ -24,7 +24,9 @@ ggmsa <- function(
 ) {
     aln <- read.fasta(fasta)
     
-	ggplot(aln, ...) +
+    mapping <- aes_(x=~x, y=~y, fill=~mut, label=~mut)
+    	
+    ggplot(aln, mapping=mapping, ...) +
 		geom_msa() +
 		fill.scale(na.value=NA) +
 		theme_minimal() +
