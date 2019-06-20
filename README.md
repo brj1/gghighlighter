@@ -1,8 +1,8 @@
-#My fork of YuLab-SMU/ggmsa
+# My fork of YuLab-SMU/ggmsa
 
 Multiple sequence alignment (MSA) plots in ggplot2. ggmsa adds functions to fortify ape::DNAbin and ape::AAbin  objects as well as matrices of aligments.
 
-##Installation
+## Installation
 
 To install run the following commands in R
 
@@ -11,14 +11,14 @@ To install run the following commands in R
 install.packages(c("devtools", "BiocManager"))
 
 #install treeio package
-libray(BiocManager)
+library(BiocManager)
 BiocManager::install("treeio")
 
 #install ggmmsa from github
 devtools::install_github("brj1/ggmsa")
 ```
 
-##Examples
+## Examples
 
 You can simply call the `ggmsa` function to plot a MSA.
 
@@ -30,7 +30,10 @@ ggmsa(f)
 ```
 
 Amino acid values can be added with a geom_text layer.
+
 ```r
 library(ggplot2)
-ggmsa(f) + geom_text(aes(x=x, y=y, label=label)
+ggmsa(f) + geom_text()
 ```
+
+Beware that there are a lot of warnings thrown in the current version of ggmsa.
