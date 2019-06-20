@@ -32,7 +32,7 @@ fortify.AAbin <-
 ##' @title fortify_alignment_matrix
 ##' @param x alignment matrix
 ##' @param consensus either the name of the consensus sequence or the a character string of the consensus sequence or NA for no ceonsenus highlighting
-##' @param remove.blank set TRUE to mark unknown, missing and gaps as NA (default: TRUE)
+##' @param remove.blank character vector of characters to mark as NA or NULL (default: "X", "x", "-", "?", "*")
 ##' @param ... additional parameters passed to geom_tile
 ##' @return tibble
 ##' @importFrom tidyr gather
@@ -43,7 +43,7 @@ fortify.AAbin <-
 fortify_alignment_matrix <- function(
 	x,
 	consensus = NA,
-	remove.blank = TRUE,
+	remove.blank = c("X", "x", "-", "?", "*"),
 	...
 ) {
 	df <- as.data.frame(x)
@@ -83,9 +83,9 @@ fortify_alignment_matrix <- function(
 		mutate(
 			x=gsub("V", "", x) %>%
 				as.numeric,
-			mut=if (remove.blank) {
+			mut=if (!is.null(remove.blank)) {
 				ifelse(
-					mut %in% c("X", "x", "-", "?"),
+					mut %in% remove.blank,
 					NA,
 					mut
 				)
