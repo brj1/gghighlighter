@@ -5,7 +5,7 @@
 ##' @param fasta aligned fasta file
 ##' @param fill.scale fill scale
 ##' @param consensus either the name of the consensus sequence or the a character string of the consensus sequence or NA for no ceonsenus highlighting
-##' @param remove.blank set TRUE to mark unknown, missing and gaps as NA (default: TRUE)
+##' @param remove.blank character vector of characters to mark as NA or NULL (default: "X", "x", "-", "?", "*")
 ##' @param ... additional parameters passed to ggplot
 ##' @return ggplot object
 ##' @importFrom treeio read.fasta
