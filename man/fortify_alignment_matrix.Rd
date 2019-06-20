@@ -4,15 +4,14 @@
 \alias{fortify_alignment_matrix}
 \title{fortify_alignment_matrix}
 \usage{
-fortify_alignment_matrix(x, consensus = NA, remove.blank = c("X", "x",
-  "-", "?", "*"), ...)
+fortify_alignment_matrix(x, consensus = NA, remove.blank = NULL, ...)
 }
 \arguments{
 \item{x}{alignment matrix}
 
 \item{consensus}{either the name of the consensus sequence or the a character string of the consensus sequence or NA for no ceonsenus highlighting}
 
-\item{remove.blank}{character vector of characters to mark as NA or NULL (default: "X", "x", "-", "?", "*")}
+\item{remove.blank}{character vector of characters to mark as NA (default: NULL)}
 
 \item{...}{additional parameters passed to geom_tile}
 }

@@ -4,8 +4,9 @@
 ##' @title ggmsa
 ##' @param fasta aligned fasta file
 ##' @param fill.scale fill scale
+##' @param palette name of msa colour palette
 ##' @param consensus either the name of the consensus sequence or the a character string of the consensus sequence or NA for no ceonsenus highlighting
-##' @param remove.blank character vector of characters to mark as NA or NULL (default: "X", "x", "-", "?", "*")
+##' @param remove.blank character vector of characters to mark as NA (default: NULL)
 ##' @param ... additional parameters passed to ggplot
 ##' @return ggplot object
 ##' @importFrom treeio read.fasta
@@ -19,7 +20,7 @@
 ##' @author guangchuang yu, Bradley R Jones
 ggmsa <- function(
 	fasta,
-	fill.scale = ggplot2::scale_fill_discrete,
+	palette = NULL,
 	...
 ) {
     aln <- read.fasta(fasta)
@@ -28,7 +29,7 @@ ggmsa <- function(
     	
     ggplot(aln, mapping=mapping, ...) +
 		geom_msa() +
-		fill.scale(na.value=NA) +
+		scale_fill_msa(palette=palette) +
 		theme_minimal() +
 		theme(legend.position='none') +
 		scale_x_continuous(name="Position", expand=c(0, 0)) +

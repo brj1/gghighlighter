@@ -14,7 +14,7 @@ geom_msa(mapping = NULL, data = NULL, ...)
 \item{...}{additional parameters passed to geom_tile}
 }
 \value{
-msa layer
+ggplot msa layer
 }
 \description{
 add msa layer

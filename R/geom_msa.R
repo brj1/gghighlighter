@@ -5,7 +5,7 @@
 ##' @param mapping aesthetic mapping
 ##' @param data data
 ##' @param ... additional parameters passed to geom_tile
-##' @return msa layer
+##' @return  ggplot msa layer
 ##' @importFrom ggplot2 geom_tile
 ##' @importFrom ggplot2 aes_
 ##' @export

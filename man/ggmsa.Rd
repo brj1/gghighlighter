@@ -4,18 +4,20 @@
 \alias{ggmsa}
 \title{ggmsa}
 \usage{
-ggmsa(fasta, fill.scale = ggplot2::scale_fill_discrete, ...)
+ggmsa(fasta, palette = NULL, ...)
 }
 \arguments{
 \item{fasta}{aligned fasta file}
 
-\item{fill.scale}{fill scale}
+\item{palette}{name of msa colour palette}
 
 \item{...}{additional parameters passed to ggplot}
 
+\item{fill.scale}{fill scale}
+
 \item{consensus}{either the name of the consensus sequence or the a character string of the consensus sequence or NA for no ceonsenus highlighting}
 
-\item{remove.blank}{character vector of characters to mark as NA or NULL (default: "X", "x", "-", "?", "*")}
+\item{remove.blank}{character vector of characters to mark as NA (default: NULL)}
 }
 \value{
 ggplot object
