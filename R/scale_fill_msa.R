@@ -38,5 +38,5 @@ scale_fill_msa <- function(palette=NULL, ...) {
 		stop(paste0(palette, " not implemented."))
 	}
 	
-	scale_fill_manual(breaks=character.set, limits=character.set, values=values, ...)
+	scale_fill_manual(breaks=character.set, limits=character.set, values=values, na.value=NA, ...)
 }

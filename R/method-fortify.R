@@ -37,6 +37,7 @@ fortify.AAbin <-
 ##' @return tibble
 ##' @importFrom tidyr gather
 ##' @importFrom tidyr %>%
+##' @importFrom dplyr mutate_all
 ##' @importFrom dplyr mutate
 ##' @export
 ##' @author Bradley R Jones
@@ -78,7 +79,7 @@ fortify_alignment_matrix <- function(
 	}
 	
 	
-	df <- mutate_all(df, as.character)
+	df <- mutate_all(df, . %>% as.character %>% toupper)
 	df$y <- row.names(df)
 	
 	# convert from wide format for easier plotting
