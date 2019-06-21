@@ -77,8 +77,11 @@ fortify_alignment_matrix <- function(
 			as.data.frame
 	}
 	
-	# convert from wide format for easier plotting
+	
+	df <- mutate_all(df, as.character)
 	df$y <- row.names(df)
+	
+	# convert from wide format for easier plotting
 	gather(df, "x", "mut", -y) %>%
 		mutate(
 			x=gsub("V", "", x) %>%
