@@ -16,7 +16,7 @@ scale_fill_msa <- function(palette=NULL, ...) {
 		'H', 'D', 'E', 'K', 'N',
 		'Q', 'R', 'M', 'I', 'L',
 		'V', 'F', 'W', 'Y', 'C',
-		'A', 'G', 'S', 'T', 'P',
+		'A', 'G', 'S', 'T', 'P'
 	)
 	
 	if (palette == 'lanl') {
@@ -38,5 +38,5 @@ scale_fill_msa <- function(palette=NULL, ...) {
 		stop(paste0(palette, " not implemented."))
 	}
 	
-	scale_fill_discrete(breaks=character.set, limits=character.set, values=values, ...)
+	scale_fill_manual(breaks=character.set, limits=character.set, values=values, ...)
 }
