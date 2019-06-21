@@ -48,6 +48,7 @@ fortify_alignment_matrix <- function(
 	...
 ) {
 	df <- as.data.frame(x)
+	df.names <- row.names(df)
 	
 	# identify and apply consensus highlighting
 	if (!is.na(consensus)[1]) {
@@ -80,7 +81,7 @@ fortify_alignment_matrix <- function(
 	
 	
 	df <- mutate_all(df, . %>% as.character %>% toupper)
-	df$y <- row.names(df)
+	df$y <- df.names
 	
 	# convert from wide format for easier plotting
 	gather(df, "x", "mut", -y) %>%
