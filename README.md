@@ -37,3 +37,10 @@ ggmsa(f) + geom_text()
 ```
 
 Beware that there are a lot of warnings thrown in the current version of ggmsa.
+
+
+## GGMSA info
+
+fonts
+
+<https://github.com/yixuan/fontr>

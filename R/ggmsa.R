@@ -19,6 +19,10 @@
 ##' @importFrom ggplot2 xlab
 ##' @importFrom ggplot2 ylab
 ##' @importFrom ggplot2 coord_fixed
+<<<<<<< HEAD
+=======
+##' @importFrom magrittr %>%
+>>>>>>> yu/master
 ##' @export
 ##' @author guangchuang yu, Bradley R Jones
 ggmsa <- function(
