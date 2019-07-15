@@ -9,9 +9,9 @@
 ##' @importFrom ggplot2 geom_tile
 ##' @importFrom ggplot2 aes_
 ##' @export
-##' @author Bradley R Jones
+##' @author guangchuang yu, Bradley R Jones
 geom_msa <- function(mapping = NULL, data = NULL, ...) {
-	default_aes <- aes_(x=~x, y=~y, fill=~mut)
+	default_aes <- aes_(x=~position, y=~name, fill=~character)
 	
 	if (is.null(mapping)) {
 		mapping <- default_aes

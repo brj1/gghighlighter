@@ -4,16 +4,20 @@
 \alias{ggmsa}
 \title{ggmsa}
 \usage{
-ggmsa(fasta, palette = NULL, ...)
+ggmsa(fasta, start = NULL, end = NULL, ..., palette = NULL)
 }
 \arguments{
 \item{fasta}{aligned fasta file}
 
-\item{palette}{name of msa colour palette}
+\item{start}{start position to plot}
+
+\item{end}{end position to plot}
 
 \item{...}{additional parameters passed to ggplot}
 
-\item{fill.scale}{fill scale}
+\item{palette}{name of msa colour palette}
+
+\item{font}{character font}
 
 \item{consensus}{either the name of the consensus sequence or the a character string of the consensus sequence or NA for no ceonsenus highlighting}
 

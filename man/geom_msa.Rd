@@ -20,5 +20,5 @@ ggplot msa layer
 add msa layer
 }
 \author{
-Bradley R Jones
+guangchuang yu, Bradley R Jones
 }

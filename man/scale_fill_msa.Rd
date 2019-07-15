@@ -18,5 +18,5 @@ ggplot fill scale
 Nucleotide and Amino acid colour scales
 }
 \author{
-Bradley R Jones
+guangchuang yu, Bradley R Jones
 }

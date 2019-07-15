@@ -7,7 +7,7 @@
 ##' @return ggplot fill scale
 ##' @importFrom ggplot2 scale_fill_manual
 ##' @export
-##' @author Bradley R Jones
+##' @author guangchuang yu, Bradley R Jones
 scale_fill_msa <- function(palette=NULL, ...) {
 	if (is.null(palette))
 		return(scale_fill_discrete(...))
@@ -17,6 +17,13 @@ scale_fill_msa <- function(palette=NULL, ...) {
 		'Q', 'R', 'M', 'I', 'L',
 		'V', 'F', 'W', 'Y', 'C',
 		'A', 'G', 'S', 'T', 'P'
+	)
+	
+	na <- c(
+		"A", "C", "G", "T", "U",
+		"R", "Y", "K", "M", "S",
+		"W", "B", "D", "H", "V",
+		"N"
 	)
 	
 	if (palette == 'lanl') {

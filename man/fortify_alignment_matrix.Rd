@@ -4,10 +4,18 @@
 \alias{fortify_alignment_matrix}
 \title{fortify_alignment_matrix}
 \usage{
-fortify_alignment_matrix(x, consensus = NA, remove.blank = NULL, ...)
+fortify_alignment_matrix(x, start = NULL, end = NULL,
+  font = "helvetica_regular", consensus = NA, remove.blank = NULL,
+  ...)
 }
 \arguments{
 \item{x}{alignment matrix}
+
+\item{start}{start position to plot}
+
+\item{end}{end position to plot}
+
+\item{font}{character font}
 
 \item{consensus}{either the name of the consensus sequence or the a character string of the consensus sequence or NA for no ceonsenus highlighting}
 
@@ -22,5 +30,5 @@ tibble
 fortify alignment matrix
 }
 \author{
-Bradley R Jones
+guangchuang yu, Bradley R Jones
 }
