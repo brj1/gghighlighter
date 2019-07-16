@@ -11,7 +11,7 @@
 ##' @export
 ##' @author guangchuang yu, Bradley R Jones
 geom_seqlab <- function(mapping = NULL, data = NULL, ...) {
-	default_aes <- aes_(x=~x, y=~y, group=~factor(group))
+	default_aes <- aes_(x=~x.logo, y=~y.logo, group=~factor(group))
 	
 	if (is.null(mapping)) {
 		mapping <- default_aes

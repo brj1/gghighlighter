@@ -4,7 +4,8 @@
 \alias{ggmsa}
 \title{ggmsa}
 \usage{
-ggmsa(fasta, start = NULL, end = NULL, ..., palette = NULL)
+ggmsa(fasta, start = NULL, end = NULL, font = "helvetica_regular",
+  ..., palette = NULL)
 }
 \arguments{
 \item{fasta}{aligned fasta file}
@@ -13,13 +14,13 @@ ggmsa(fasta, start = NULL, end = NULL, ..., palette = NULL)
 
 \item{end}{end position to plot}
 
-\item{...}{additional parameters passed to ggplot}
+\item{font}{character font}
+
+\item{...}{additional parameters passed to fortify and ggplot}
 
 \item{palette}{name of msa colour palette}
 
-\item{font}{character font}
-
-\item{consensus}{either the name of the consensus sequence or the a character string of the consensus sequence or NA for no ceonsenus highlighting}
+\item{consensus}{either the name of the consensus sequence or e a character string of the consensus sequence or NA for no consensus highlighting}
 
 \item{remove.blank}{character vector of characters to mark as NA (default: NULL)}
 }

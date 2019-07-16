@@ -26,18 +26,10 @@ You can simply call the `ggmsa` function to plot a MSA.
 library(ggmsa)
 f <- system.file("extdata/sample.fasta", package="ggmsa")
 dev.new(width=11, height=2)
-ggmsa(f)
-```
-
-Amino acid values can be added with a geom_text layer.
-
-```r
-library(ggplot2)
-ggmsa(f) + geom_text()
+ggmsa(f, 164, 213)
 ```
 
 Beware that there are a lot of warnings thrown in the current version of ggmsa.
-
 
 ## GGMSA info
 

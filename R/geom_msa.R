@@ -11,7 +11,7 @@
 ##' @export
 ##' @author guangchuang yu, Bradley R Jones
 geom_msa <- function(mapping = NULL, data = NULL, ...) {
-	default_aes <- aes_(x=~position, y=~name, fill=~character)
+	default_aes <- aes_(x=~position, y=~y, fill=~character)
 	
 	if (is.null(mapping)) {
 		mapping <- default_aes

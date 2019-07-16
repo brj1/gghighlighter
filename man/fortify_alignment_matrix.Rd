@@ -4,9 +4,8 @@
 \alias{fortify_alignment_matrix}
 \title{fortify_alignment_matrix}
 \usage{
-fortify_alignment_matrix(x, start = NULL, end = NULL,
-  font = "helvetica_regular", consensus = NA, remove.blank = NULL,
-  ...)
+fortify_alignment_matrix(x, start = NULL, end = NULL, consensus = NA,
+  remove.blank = NULL, logos = FALSE, ...)
 }
 \arguments{
 \item{x}{alignment matrix}
@@ -15,11 +14,11 @@ fortify_alignment_matrix(x, start = NULL, end = NULL,
 
 \item{end}{end position to plot}
 
-\item{font}{character font}
-
-\item{consensus}{either the name of the consensus sequence or the a character string of the consensus sequence or NA for no ceonsenus highlighting}
+\item{consensus}{either the name of the consensus sequence or e a character string of the consensus sequence or NA for no consensus highlighting}
 
 \item{remove.blank}{character vector of characters to mark as NA (default: NULL)}
+
+\item{logos}{add logos}
 
 \item{...}{additional parameters passed to geom_tile}
 }

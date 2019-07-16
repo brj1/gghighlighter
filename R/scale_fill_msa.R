@@ -20,13 +20,20 @@ scale_fill_msa <- function(palette=NULL, ...) {
 	)
 	
 	na <- c(
+		"A", "C", "G", "T", "U"
+	)
+	
+	na.ex <- c(
 		"A", "C", "G", "T", "U",
 		"R", "Y", "K", "M", "S",
 		"W", "B", "D", "H", "V",
 		"N"
 	)
 	
-	if (palette == 'lanl') {
+	if (is.null(palette) || palette == 'default') {
+		character.set <- c(na, "N", "-")
+		values <- c('purple', 'orange', 'pink', 'green', 'grey', 'white', 'white')
+	} else if (palette == 'lanl') {
 		character.set <- c(aa, 'X', '*')
 		values <- c(
 			"#0000FF", # H
