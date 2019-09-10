@@ -5,7 +5,9 @@
 \title{ggmsa}
 \usage{
 ggmsa(fasta, start = NULL, end = NULL, font = "helvetica_regular",
-  ..., palette = NULL)
+  color = c("Chemistry_AA", "Shapely_AA", "Zappo_AA", "Taylor_AA",
+  "LANL_AA", "Chemistry_Nucle", "Shapely_Nucle", "Zappo_Nucle",
+  "Taylor_Nucle"), ...)
 }
 \arguments{
 \item{fasta}{aligned fasta file}
@@ -16,9 +18,9 @@ ggmsa(fasta, start = NULL, end = NULL, font = "helvetica_regular",
 
 \item{font}{character font}
 
-\item{...}{additional parameters passed to fortify and ggplot}
+\item{color}{name of msa colour scheme (6 amino acid color schemes, 4 nucleic acid color schemes. Note: Culstal is an amino acid color scheme)}
 
-\item{palette}{name of msa colour palette}
+\item{...}{additional parameters passed to fortify and ggplot}
 
 \item{consensus}{either the name of the consensus sequence or e a character string of the consensus sequence or NA for no consensus highlighting}
 
@@ -31,5 +33,5 @@ ggplot object
 plot multiple sequence alignment using ggplot2
 }
 \author{
-guangchuang yu, Bradley R Jones
+guangchuang yu
 }

@@ -6,9 +6,9 @@
 ##' @param start start position to plot
 ##' @param end end position to plot
 ##' @param font character font
+##' @param color name of msa colour scheme (6 amino acid color schemes, 4 nucleic acid color schemes. Note: Culstal is an amino acid color scheme)
 ##' @param consensus either the name of the consensus sequence or e a character string of the consensus sequence or NA for no consensus highlighting
 ##' @param remove.blank character vector of characters to mark as NA (default: NULL)
-##' @param palette name of msa colour palette
 ##' @param ... additional parameters passed to fortify and ggplot
 ##' @return ggplot object
 ##' @importFrom treeio read.fasta
@@ -21,15 +21,19 @@
 ##' @importFrom ggplot2 coord_fixed
 ##' @importFrom tidyr %>%
 ##' @export
-##' @author guangchuang yu, Bradley R Jones
+##' @author guangchuang yu
 ggmsa <- function(
 	fasta,
 	start = NULL,
 	end = NULL,
 	font = 'helvetica_regular',
-	...,
-	palette = NULL
+	color = c(#"Clustal", # for now Clustal will not work
+		      "Chemistry_AA","Shapely_AA","Zappo_AA","Taylor_AA", "LANL_AA",
+			  "Chemistry_Nucle","Shapely_Nucle","Zappo_Nucle","Taylor_Nucle"),
+	...
 ) {
+	color <- match.arg(color)
+	
     aln <- read.fasta(fasta)
     
     mapping <- aes_(x=~position, y=~y, fill=~character, label=~character)
