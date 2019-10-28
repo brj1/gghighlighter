@@ -1,6 +1,8 @@
-# My fork of YuLab-SMU/ggmsa
+# gghighlighter
 
-Multiple sequence alignment (MSA) plots in ggplot2. ggmsa adds functions to fortify ape::DNAbin and ape::AAbin  objects as well as matrices of aligments.
+Highlighter and multiple sequence alignment (MSA) plots in ggplot2. gghighltighter adds functions to fortify ape::DNAbin and ape::AAbin  objects as well as matrices of aligments.
+
+Originally forked from YuLab-SMU/ggmsa, but almost no code was retained, execpt colour schemes.
 
 ## Installation
 
