@@ -17,24 +17,22 @@ library(BiocManager)
 BiocManager::install("treeio")
 
 #install ggmmsa from github
-devtools::install_github("brj1/ggmsa")
+devtools::install_github("brj1/gghighlighter")
 ```
 
 ## Examples
 
-You can simply call the `ggmsa` function to plot a MSA.
+You can simply call the `gghighlighter` function to plot a MSA.
 
 ```r
-library(ggmsa)
-f <- system.file("extdata/sample.fasta", package="ggmsa")
+library(gghighlighter)
+f <- system.file("extdata/sample.fasta", package="gghighlighter")
 dev.new(width=11, height=2)
-ggmsa(f, 164, 213)
+gghighlighter(f, 164, 213)
+
+# Highlight differences
+gghighlighter(f, 164, 213, consensus="PH4H_Rattus_norvegicus", remove.blank=c("-"))
+
+# Highlight similarities
+gghighlighter(f, 164, 213, consensus="PH4H_Rattus_norvegicus", remove.blank=c("-"), hightlight.diff=FALSE)
 ```
-
-Beware that there are a lot of warnings thrown in the current version of ggmsa.
-
-## GGMSA info
-
-fonts
-
-<https://github.com/yixuan/fontr>

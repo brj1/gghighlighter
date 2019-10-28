@@ -34,8 +34,8 @@ fortify.AAbin <-
 ##' @param start start position to plot
 ##' @param end end position to plot
 ##' @param consensus either the name of the consensus sequence or e a character string of the consensus sequence or NA for no consensus highlighting
+##' @param highlight.diff TRUE to highlight differences from consesnsus and FALSE to highlight similarities (default: TRUE)
 ##' @param remove.blank character vector of characters to mark as NA (default: NULL)
-##' @param logos add logos
 ##' @param ... additional parameters passed to geom_tile
 ##' @return tibble
 ##' @importFrom tidyr gather
@@ -44,14 +44,14 @@ fortify.AAbin <-
 ##' @importFrom dplyr mutate
 ##' @importFrom dplyr as_tibble
 ##' @export
-##' @author guangchuang yu, Bradley R Jones
+##' @author Bradley R Jones
 fortify_alignment_matrix <- function(
 	x,
 	start = NULL,
 	end = NULL,
 	consensus = NA,
+	highlight.diff = TRUE,
 	remove.blank = NULL,
-	logos = FALSE,
 	...
 ) {
 	wide.df <- as.data.frame(x)
@@ -78,7 +78,9 @@ fortify_alignment_matrix <- function(
 			wide.df,
 			1,
 			function(sequence) {
-				sequence[toupper(sequence) == toupper(cons)] <- NA
+				sequence[
+					highlight.diff == (toupper(sequence) == toupper(cons))
+				] <- NA
 				sequence
 			}
 		) %>%
@@ -104,8 +106,7 @@ fortify_alignment_matrix <- function(
 			} else {
 				character
 			}
-		) %>%
-		mutate(ypos=as.numeric(y))
+		)
 	 
 	# clip alignment
 	if (!is.null(start))
@@ -117,9 +118,6 @@ fortify_alignment_matrix <- function(
 	
 	# save base type
 	attr(df, "baseClass") <- class(x)
-	
-	if (logos)
-		df <- infer_character_logos(df)
 	
 	df
 }

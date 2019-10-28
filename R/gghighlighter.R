@@ -1,13 +1,13 @@
 ##' plot multiple sequence alignment using ggplot2
 ##'
 ##'
-##' @title ggmsa
+##' @title gghighlighter
 ##' @param fasta aligned fasta file
 ##' @param start start position to plot
 ##' @param end end position to plot
-##' @param font character font
-##' @param color name of msa colour scheme (6 amino acid color schemes, 4 nucleic acid color schemes. Note: Culstal is an amino acid color scheme)
+##' @param palette name of highlighter colour scheme (5 amino acid color schemes, 4 nucleic acid color schemes.)
 ##' @param consensus either the name of the consensus sequence or e a character string of the consensus sequence or NA for no consensus highlighting
+##' @param highlight.diff TRUE to highlight differences from consesnsus and FALSE to highlight similarities  (default: TRUE)
 ##' @param remove.blank character vector of characters to mark as NA (default: NULL)
 ##' @param ... additional parameters passed to fortify and ggplot
 ##' @return ggplot object
@@ -16,38 +16,36 @@
 ##' @importFrom ggplot2 scale_fill_discrete
 ##' @importFrom ggplot2 theme
 ##' @importFrom ggplot2 theme_minimal
-##' @importFrom ggplot2 xlab
+##' @importFrom ggplot2 scale_x_continuous
+##' @importFrom ggplot2 expand_scale
 ##' @importFrom ggplot2 ylab
 ##' @importFrom ggplot2 coord_fixed
 ##' @importFrom tidyr %>%
 ##' @export
-##' @author guangchuang yu
-ggmsa <- function(
+##' @author Bradley R Jones, guangchuang yu
+gghighlighter <- function(
 	fasta,
-	start = NULL,
-	end = NULL,
-	font = 'helvetica_regular',
-	color = c(#"Clustal", # for now Clustal will not work
-		      "Chemistry_AA","Shapely_AA","Zappo_AA","Taylor_AA", "LANL_AA",
-			  "Chemistry_Nucle","Shapely_Nucle","Zappo_Nucle","Taylor_Nucle"),
+	start=NULL,
+	end=NULL,
+	palette=c(
+		"Chemistry_AA","Shapely_AA","Zappo_AA","Taylor_AA", "LANL_AA",
+		"Chemistry_Nucle","Shapely_Nucle","Zappo_Nucle","Taylor_Nucle"
+	),
 	...
 ) {
-	color <- match.arg(color)
+	palette <- match.arg(palette)
 	
     aln <- read.fasta(fasta)
     
     mapping <- aes_(x=~position, y=~y, fill=~character, label=~character)
-    mapping2 <- aes_(x=~x.logo, y=~y.logo, group=~factor(group))
     
-    aln.f <- fortify(aln, start, end, logos=TRUE, ...)
+    aln.f <- fortify(aln, start, end, ...)
     
     ggplot(aln.f, mapping=mapping, ...) +
-		geom_msa(colour="grey") +
-    	geom_seqlab(mapping=mapping2, fill="black") +
-		scale_fill_msa(palette=palette) +
+		geom_highlighter() +
+		scale_fill_highlighter(palette=palette) +
 		theme_minimal() +
 		theme(legend.position='none') +
-    	xlab(NULL) +
-    	ylab(NULL) +
-    	coord_fixed()
+    	scale_x_continuous(name="Position", expand=expand_scale(add=0)) +
+    	ylab(NULL)
 }

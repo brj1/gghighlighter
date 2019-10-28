@@ -5,7 +5,7 @@
 \title{fortify_alignment_matrix}
 \usage{
 fortify_alignment_matrix(x, start = NULL, end = NULL, consensus = NA,
-  remove.blank = NULL, logos = FALSE, ...)
+  highlight.diff = TRUE, remove.blank = NULL, ...)
 }
 \arguments{
 \item{x}{alignment matrix}
@@ -16,9 +16,9 @@ fortify_alignment_matrix(x, start = NULL, end = NULL, consensus = NA,
 
 \item{consensus}{either the name of the consensus sequence or e a character string of the consensus sequence or NA for no consensus highlighting}
 
-\item{remove.blank}{character vector of characters to mark as NA (default: NULL)}
+\item{highlight.diff}{TRUE to highlight differences from consesnsus and FALSE to highlight similarities (default: TRUE)}
 
-\item{logos}{add logos}
+\item{remove.blank}{character vector of characters to mark as NA (default: NULL)}
 
 \item{...}{additional parameters passed to geom_tile}
 }
@@ -29,5 +29,5 @@ tibble
 fortify alignment matrix
 }
 \author{
-guangchuang yu, Bradley R Jones
+Bradley R Jones
 }
