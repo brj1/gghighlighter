@@ -36,3 +36,12 @@ gghighlighter(f, 164, 213, consensus="PH4H_Rattus_norvegicus", remove.blank=c("-
 # Highlight similarities
 gghighlighter(f, 164, 213, consensus="PH4H_Rattus_norvegicus", remove.blank=c("-"), hightlight.diff=FALSE)
 ```
+
+Or to plot DNA MSA:
+
+```r
+library(gghighlighter)
+f <- system.file("extdata/dna_seq.fasta", package="gghighlighter")
+dev.new(width=11, height=2)
+gghighlighter(f, 0, 100, palette="Chemistry_Nucle")
+```
